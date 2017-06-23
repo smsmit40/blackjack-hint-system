@@ -257,6 +257,22 @@ namespace BJ5
                     amountWin.Visible = true;
                     game_over(); // checks if chips == 0 or chips > 2000
                 }
+                if(handPlayer.getValue() > handDealer.getValue()) // if dealer not greater than 17
+                {
+                    timer.Dispose();
+                    win.Play();
+                    resetTable();
+                    coinsTotal = coinsTotal + bet + bet;
+                    coinsLabel.Text = " = $" + coinsTotal.ToString();
+                    amountWin.Text = " + $" + (bet * 2);
+                    bet = 0;
+                    dealerEndGame.Text = "Dealer can't play more cards!";
+                    betLabel.Text = "You win the round! Click on chips to bet!";
+                    dealerCounter = 0;
+                    dealerEndGame.Visible = true;
+                    amountWin.Visible = true;
+                    game_over(); // checks if chips == 0 or chips > 2000
+                }
             }
         }
         /* Checks the value of the player's hand */
