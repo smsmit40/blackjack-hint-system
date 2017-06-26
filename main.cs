@@ -25,7 +25,7 @@ using System.Web;
 
 namespace BJ5
 {
-    public partial class main : Form 
+    public partial class main : Form
     {
         Deck deck = new Deck();
         HandPlayer handPlayer;
@@ -46,10 +46,10 @@ namespace BJ5
         System.Media.SoundPlayer win = new System.Media.SoundPlayer("Resources/win.wav"); // win sound
         System.Media.SoundPlayer winGame = new System.Media.SoundPlayer("Resources/winGame.wav"); // win/endgame sound
         System.Timers.Timer exitTimer = new System.Timers.Timer(); // timer to exit
-        System.Timers.Timer dealerTimer = new System.Timers.Timer(); // timer between each draw 
+        System.Timers.Timer dealerTimer = new System.Timers.Timer(); // timer between each draw
 
         System.Threading.Timer timer;
-        
+
         /* Constructor to initialize the fields*/
         public main()
         {
@@ -70,17 +70,17 @@ namespace BJ5
             dealerCard2.Visible = false; dealerCard3.Visible = false;
             dealerCard4.Visible = false; dealerCard5.Visible = false;
             dealerLabel.Visible = false;
-           
+
             playerLabel.Visible = false;
             // value of cards
-            handPlayer = new HandPlayer(); 
+            handPlayer = new HandPlayer();
             handDealer = new HandDealer();
-            playerCounter = 0; // counter to draw more cards 
+            playerCounter = 0; // counter to draw more cards
             coinsTotal = 1500;
             bet = 0; surrenderCounter = 0;
             coinsLabel.Text = " = $" + coinsTotal.ToString();
             betLabel.Text = "Click on chips to bet!: $" + bet.ToString();
-            
+
             exitTimer.Elapsed += new ElapsedEventHandler(CloseEvent); // elapse time to exit application
             exitTimer.Interval = 1500; // set an interval
         }
@@ -94,7 +94,7 @@ namespace BJ5
         /* Exit the game when the Elapsed event is raised. */
         private void CloseEvent(object source, ElapsedEventArgs e)
         {
-           // rules.Dispose(); 
+           // rules.Dispose();
             Application.Exit();
         }
 
@@ -151,130 +151,130 @@ namespace BJ5
                 valueDealer.Text = "Dealer's hand total: " + handDealer.getValue().ToString();
                 checkDealersHand();
             }
-             
+
         }
 
         /* Checks the value of the dealer's hand */
-        private void checkDealersHand()
-        {
-            if (handDealer.getValue() == handPlayer.getValue()) // push happens
-            {
-                timer.Dispose();
-                resetTable();
-                getChips.Play();
-                coinsTotal = coinsTotal + bet;
-                amountWin.Text = " + $" + bet;
-                coinsLabel.Text = " = $" + coinsTotal.ToString();
-                bet = 0;
-                betLabel.Text = "Push! Click on chips to bet!";
-                dealerEndGame.Text = "PUSH! YOU GET YOUR CHIPS BACK";
-                dealerCounter = 0;
-                dealerEndGame.Visible = true;
-                amountWin.Visible = true;
-            }
-            if (handDealer.getValue() > 21) // dealer loses
-            {
-                if (handPlayer.getValue() != 21) // if not blackjack
-                {
-                    timer.Dispose();
-                    win.Play();
-                    resetTable();
-                    coinsTotal = coinsTotal + bet + bet;
-                    coinsLabel.Text = " = $" + coinsTotal.ToString();
-                    amountWin.Text = " + $" + (bet * 2);
-                    bet = 0;
-                    dealerEndGame.Text = "DEALER BUSTED, HE LOSES!";
-                    betLabel.Text = "You win the round! Click on chips to bet!";
-                    dealerCounter = 0;
-                    dealerEndGame.Visible = true;
-                    amountWin.Visible = true;
-                    game_over(); // checks if chips == 0 or chips > 2000
-                }
-                if (handPlayer.getValue() == 21) // if blackjack
-                {
-                    timer.Dispose();
-                    win.Play();
-                    resetTable();
-                    amountWin.Text = " + $" + ((bet * 2) + (bet / 2));
-                    coinsTotal = coinsTotal + bet + bet + (bet / 2);
-                    coinsLabel.Text = " = $" + coinsTotal.ToString();
-                    bet = 0;
-                    dealerEndGame.Text = "DEALER BUSTED, HE LOSES!";
-                    betLabel.Text = "You win the round! Click on chips to bet!";
-                    dealerCounter = 0;
-                    dealerEndGame.Visible = true;
-                    amountWin.Visible = true;
-                    game_over(); // checks if chips == 0 or chips > 2000
-                }
-            }
-            if (handDealer.getValue() > handPlayer.getValue()) // dealer wins
-            {
-                timer.Dispose();
-                resetTable();
-                coinsTotal = coinsTotal + bet - bet;
-                coinsLabel.Text = " = $" + coinsTotal.ToString();
-                amountWin.Text = " - $" + bet;
-                bet = 0;
-                lose.Play();
-                betLabel.Text = "You lose the round! Click on chips to bet!";
-                dealerEndGame.Text = "DEALER WINS!";
-                dealerCounter = 0;
-                dealerEndGame.Visible = true;
-                amountWin.Visible = true;
-                game_over(); // checks if chips == 0 or chips > 2000
-            }
-            if (handDealer.getValue() >= 17) // dealer loses
-            {
-                if (handPlayer.getValue() != 21) // if not blackjack
-                {
-                    timer.Dispose();
-                    win.Play();
-                    resetTable();
-                    coinsTotal = coinsTotal + bet + bet;
-                    coinsLabel.Text = " = $" + coinsTotal.ToString();
-                    amountWin.Text = " + $" + (bet * 2);
-                    bet = 0;
-                    dealerEndGame.Text = "DEALER STANDS, HE LOSES!";
-                    betLabel.Text = "You win the round! Click on chips to bet!";
-                    dealerCounter = 0;
-                    dealerEndGame.Visible = true;
-                    amountWin.Visible = true;
-                    game_over(); // checks if chips == 0 or chips > 2000
-                }
-                if (handPlayer.getValue() == 21) // if blackjack
-                {
-                    timer.Dispose();
-                    win.Play();
-                    resetTable();
-                    amountWin.Text = " + $" + ((bet * 2) + (bet / 2));
-                    coinsTotal = coinsTotal + bet + bet +(bet/2);
-                    coinsLabel.Text = " = $" + coinsTotal.ToString();
-                    bet = 0;
-                    dealerEndGame.Text = "DEALER STANDS, HE LOSES!";
-                    betLabel.Text = "You win the round! Click on chips to bet!";
-                    dealerCounter = 0;
-                    dealerEndGame.Visible = true;
-                    amountWin.Visible = true;
-                    game_over(); // checks if chips == 0 or chips > 2000
-                }
-                if(handPlayer.getValue() > handDealer.getValue()) // if dealer not greater than 17
-                {
-                    timer.Dispose();
-                    win.Play();
-                    resetTable();
-                    coinsTotal = coinsTotal + bet + bet;
-                    coinsLabel.Text = " = $" + coinsTotal.ToString();
-                    amountWin.Text = " + $" + (bet * 2);
-                    bet = 0;
-                    dealerEndGame.Text = "Dealer can't play more cards!";
-                    betLabel.Text = "You win the round! Click on chips to bet!";
-                    dealerCounter = 0;
-                    dealerEndGame.Visible = true;
-                    amountWin.Visible = true;
-                    game_over(); // checks if chips == 0 or chips > 2000
-                }
-            }
-        }
+       private void checkDealersHand()
+       {
+           if (dealerCounter == 4) // dealer can't play more cards
+           {
+               timer.Dispose();
+               win.Play();
+               resetTable();
+               coinsTotal = coinsTotal + bet + bet;
+               coinsLabel.Text = " = $" + coinsTotal.ToString();
+               amountWin.Text = " + $" + (bet * 2);
+               bet = 0;
+               dealerEndGame.Text = "Dealer can't play more cards!";
+               betLabel.Text = "You win the round! Click on chips to bet!";
+               dealerCounter = 0;
+               dealerEndGame.Visible = true;
+               amountWin.Visible = true;
+               game_over(); // checks if chips == 0 or chips > 2000
+           }
+           if (handDealer.getValue() == handPlayer.getValue() && handDealer.getValue() >= 17 ) // push happens
+           {
+               timer.Dispose();
+               resetTable();
+               getChips.Play();
+               coinsTotal = coinsTotal + bet;
+               amountWin.Text = " + $" + bet;
+               coinsLabel.Text = " = $" + coinsTotal.ToString();
+               bet = 0;
+               betLabel.Text = "Push! Click on chips to bet!";
+               dealerEndGame.Text = "PUSH! YOU GET YOUR CHIPS BACK";
+               dealerCounter = 0;
+               dealerEndGame.Visible = true;
+               amountWin.Visible = true;
+           }
+           if (handDealer.getValue() > 21) // dealer loses
+           {
+               if (handPlayer.getValue() != 21) // if not blackjack
+               {
+                   timer.Dispose();
+                   win.Play();
+                   resetTable();
+                   coinsTotal = coinsTotal + bet + bet;
+                   coinsLabel.Text = " = $" + coinsTotal.ToString();
+                   amountWin.Text = " + $" + (bet * 2);
+                   bet = 0;
+                   dealerEndGame.Text = "DEALER BUSTED, HE LOSES!";
+                   betLabel.Text = "You win the round! Click on chips to bet!";
+                   dealerCounter = 0;
+                   dealerEndGame.Visible = true;
+                   amountWin.Visible = true;
+                   game_over(); // checks if chips == 0 or chips > 2000
+               }
+               if (handPlayer.getValue() == 21) // if blackjack
+               {
+                   timer.Dispose();
+                   win.Play();
+                   resetTable();
+                   amountWin.Text = " + $" + ((bet * 2) + (bet / 2));
+                   coinsTotal = coinsTotal + bet + bet + (bet / 2);
+                   coinsLabel.Text = " = $" + coinsTotal.ToString();
+                   bet = 0;
+                   dealerEndGame.Text = "DEALER BUSTED, HE LOSES!";
+                   betLabel.Text = "You win the round! Click on chips to bet!";
+                   dealerCounter = 0;
+                   dealerEndGame.Visible = true;
+                   amountWin.Visible = true;
+                   game_over(); // checks if chips == 0 or chips > 2000
+               }
+           }
+           if (handDealer.getValue() > handPlayer.getValue()) // dealer wins
+           {
+               timer.Dispose();
+               resetTable();
+               coinsTotal = coinsTotal + bet - bet;
+               coinsLabel.Text = " = $" + coinsTotal.ToString();
+               amountWin.Text = " - $" + bet;
+               bet = 0;
+               lose.Play();
+               betLabel.Text = "You lose the round! Click on chips to bet!";
+               dealerEndGame.Text = "DEALER WINS!";
+               dealerCounter = 0;
+               dealerEndGame.Visible = true;
+               amountWin.Visible = true;
+               game_over(); // checks if chips == 0 or chips > 2000
+           }
+           if (handDealer.getValue() >= 17) // dealer loses
+           {
+               if (handPlayer.getValue() != 21) // if not blackjack
+               {
+                   timer.Dispose();
+                   win.Play();
+                   resetTable();
+                   coinsTotal = coinsTotal + bet + bet;
+                   coinsLabel.Text = " = $" + coinsTotal.ToString();
+                   amountWin.Text = " + $" + (bet * 2);
+                   bet = 0;
+                   dealerEndGame.Text = "DEALER STANDS, HE LOSES!";
+                   betLabel.Text = "You win the round! Click on chips to bet!";
+                   dealerCounter = 0;
+                   dealerEndGame.Visible = true;
+                   amountWin.Visible = true;
+                   game_over(); // checks if chips == 0 or chips > 2000
+               }
+               if (handPlayer.getValue() == 21) // if blackjack
+               {
+                   timer.Dispose();
+                   win.Play();
+                   resetTable();
+                   amountWin.Text = " + $" + ((bet * 2) + (bet / 2));
+                   coinsTotal = coinsTotal + bet + bet + (bet / 2);
+                   coinsLabel.Text = " = $" + coinsTotal.ToString();
+                   bet = 0;
+                   dealerEndGame.Text = "DEALER STANDS, HE LOSES!";
+                   betLabel.Text = "You win the round! Click on chips to bet!";
+                   dealerCounter = 0;
+                   dealerEndGame.Visible = true;
+                   amountWin.Visible = true;
+                   game_over(); // checks if chips == 0 or chips > 2000
+               }
+           }
+       }
         /* Checks the value of the player's hand */
         private void checkPlayerHand()
         {
@@ -288,7 +288,7 @@ namespace BJ5
                 betLabel.Text = "You busted! Click on chips to bet!: $" + bet.ToString();
                 endGame.Text = "YOU LOSE THE ROUND!";
                 resetTable(); // resets cards and enables chips and buttons
-                game_over(); // checks if chips == 0     
+                game_over(); // checks if chips == 0
                 endGame.Visible = true;
                 amountWin.Visible = true;
             }
@@ -315,7 +315,7 @@ namespace BJ5
             dealButton.Visible = false; betButton.Visible = true;
             betButton.Enabled = false; hitButton.Enabled = false;
             standButton.Enabled = false; amountWin.Visible = false;
-          
+
             handPlayer = new HandPlayer(); // set values in hand back to zero
             handDealer = new HandDealer(); // set values in hand back to zero
             playerCounter = 0;
@@ -347,7 +347,7 @@ namespace BJ5
             }
         }
         /* Starts game by shuffling the deck and giving 2 cards to player and 1 to dealer
-         * If player gets a blackjack, he stand automatically 
+         * If player gets a blackjack, he stand automatically
          */
         private void startGame()
         {
@@ -386,10 +386,10 @@ namespace BJ5
         }
         /* Disable buttons so dealer can play */
         private void standButton_Click(object sender, EventArgs e)
-        {    
+        {
             hitButton.Enabled = false; doubleButton.Enabled = false;
             standButton.Enabled = false; surrender.Visible = false;
-          
+
             timer = new System.Threading.Timer(OnTimerEllapsed, new object(), 0, 2000); // dealer plays now
         }
         /* Starts new round */
@@ -465,7 +465,7 @@ namespace BJ5
             greenCoin.Enabled = false;
             dealButton.Enabled = true;
             getChips.Play();
-           
+
             betLabel.Text = "You entered: $" + bet.ToString();
         }
         /* Gets one card and adds it to the player's hand. Depending on the counter, it will add to a certain position */
@@ -603,7 +603,7 @@ namespace BJ5
          * Sets values back to 0
          */
         private void newRound()
-        { 
+        {
         // start new game if players clicks on new game button
             newGame.Play(); // new game sound
             // reset buttons
@@ -634,7 +634,7 @@ namespace BJ5
             handDealer = new HandDealer(); // set values in hand back to zero
 
             playerCounter = 0; // counter to draw more cards back to zero
-            
+
         // start new round if player surrenders
             if (surrenderCounter == 0)
             {
