@@ -90,6 +90,7 @@ namespace BJ5
             }
             if (ace == true && value + 10 <= 21)
                 value = value + 10;
+                
 
             return value;
         }
@@ -101,5 +102,7 @@ namespace BJ5
 
             return value;
         }
+
+       
     }
 }

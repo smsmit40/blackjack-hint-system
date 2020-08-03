@@ -41,6 +41,7 @@
             this.dealerCard2 = new System.Windows.Forms.PictureBox();
             this.dealerCard1 = new System.Windows.Forms.PictureBox();
             this.standButton = new System.Windows.Forms.Button();
+            this.hintButton = new System.Windows.Forms.Button();
             this.dealerLabel = new System.Windows.Forms.Label();
             this.hitButton = new System.Windows.Forms.Button();
             this.dealButton = new System.Windows.Forms.Button();
@@ -60,6 +61,7 @@
             this.blueCoin = new System.Windows.Forms.PictureBox();
             this.betButton = new System.Windows.Forms.Button();
             this.betLabel = new System.Windows.Forms.Label();
+            this.hintLabel = new System.Windows.Forms.Label();
             this.newGameButton = new System.Windows.Forms.Button();
             this.mainLogo = new System.Windows.Forms.PictureBox();
             this.gameOverLabel = new System.Windows.Forms.Label();
@@ -69,31 +71,31 @@
             this.amountWin = new System.Windows.Forms.Label();
             this.feedbackLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dealerCard3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dealerCard4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dealerCard5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dealerCard2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dealerCard1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.surrender)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coins)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.whiteCoin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.redCoin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.greenCoin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.blackCoin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.blueCoin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.playerCard1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.playerCard2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.playerCard3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.playerCard4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.playerCard5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dealerCard3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dealerCard4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dealerCard5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dealerCard2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dealerCard1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.surrender)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.coins)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.whiteCoin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.redCoin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.greenCoin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.blackCoin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.blueCoin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.mainLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // playerCard1
             // 
             this.playerCard1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.playerCard1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("playerCard1.BackgroundImage")));
+            this.playerCard1.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("playerCard1.BackgroundImage")));
             this.playerCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.playerCard1.Location = new System.Drawing.Point(230, 408);
             this.playerCard1.Name = "playerCard1";
@@ -115,7 +117,7 @@
             // playerCard2
             // 
             this.playerCard2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.playerCard2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("playerCard2.BackgroundImage")));
+            this.playerCard2.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("playerCard2.BackgroundImage")));
             this.playerCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.playerCard2.Location = new System.Drawing.Point(335, 408);
             this.playerCard2.Name = "playerCard2";
@@ -126,7 +128,7 @@
             // playerCard3
             // 
             this.playerCard3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.playerCard3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("playerCard3.BackgroundImage")));
+            this.playerCard3.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("playerCard3.BackgroundImage")));
             this.playerCard3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.playerCard3.Location = new System.Drawing.Point(444, 408);
             this.playerCard3.Name = "playerCard3";
@@ -137,7 +139,7 @@
             // playerCard4
             // 
             this.playerCard4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.playerCard4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("playerCard4.BackgroundImage")));
+            this.playerCard4.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("playerCard4.BackgroundImage")));
             this.playerCard4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.playerCard4.Location = new System.Drawing.Point(548, 408);
             this.playerCard4.Name = "playerCard4";
@@ -148,7 +150,7 @@
             // playerCard5
             // 
             this.playerCard5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.playerCard5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("playerCard5.BackgroundImage")));
+            this.playerCard5.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("playerCard5.BackgroundImage")));
             this.playerCard5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.playerCard5.Location = new System.Drawing.Point(650, 408);
             this.playerCard5.Name = "playerCard5";
@@ -159,7 +161,7 @@
             // dealerCard3
             // 
             this.dealerCard3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dealerCard3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dealerCard3.BackgroundImage")));
+            this.dealerCard3.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("dealerCard3.BackgroundImage")));
             this.dealerCard3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dealerCard3.Location = new System.Drawing.Point(444, 151);
             this.dealerCard3.Name = "dealerCard3";
@@ -170,7 +172,7 @@
             // dealerCard4
             // 
             this.dealerCard4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dealerCard4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dealerCard4.BackgroundImage")));
+            this.dealerCard4.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("dealerCard4.BackgroundImage")));
             this.dealerCard4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dealerCard4.Location = new System.Drawing.Point(548, 151);
             this.dealerCard4.Name = "dealerCard4";
@@ -181,7 +183,7 @@
             // dealerCard5
             // 
             this.dealerCard5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dealerCard5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dealerCard5.BackgroundImage")));
+            this.dealerCard5.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("dealerCard5.BackgroundImage")));
             this.dealerCard5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dealerCard5.Location = new System.Drawing.Point(650, 151);
             this.dealerCard5.Name = "dealerCard5";
@@ -192,7 +194,7 @@
             // dealerCard2
             // 
             this.dealerCard2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dealerCard2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dealerCard2.BackgroundImage")));
+            this.dealerCard2.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("dealerCard2.BackgroundImage")));
             this.dealerCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dealerCard2.Location = new System.Drawing.Point(335, 151);
             this.dealerCard2.Name = "dealerCard2";
@@ -203,7 +205,7 @@
             // dealerCard1
             // 
             this.dealerCard1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dealerCard1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dealerCard1.BackgroundImage")));
+            this.dealerCard1.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("dealerCard1.BackgroundImage")));
             this.dealerCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dealerCard1.Location = new System.Drawing.Point(230, 151);
             this.dealerCard1.Name = "dealerCard1";
@@ -223,11 +225,23 @@
             this.standButton.UseVisualStyleBackColor = false;
             this.standButton.Click += new System.EventHandler(this.standButton_Click);
             // 
+            // hintButton
+            // 
+            this.hintButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.hintButton.BackColor = System.Drawing.Color.SlateGray;
+            this.hintButton.Location = new System.Drawing.Point(267, 75);
+            this.hintButton.Name = "hintButton";
+            this.hintButton.Size = new System.Drawing.Size(71, 31);
+            this.hintButton.TabIndex = 13;
+            this.hintButton.Text = "HINT";
+            this.hintButton.UseVisualStyleBackColor = false;
+            this.hintButton.Click += new System.EventHandler(this.hintButton_Click);
+            // 
             // dealerLabel
             // 
             this.dealerLabel.AutoSize = true;
             this.dealerLabel.BackColor = System.Drawing.Color.Transparent;
-            this.dealerLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dealerLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.dealerLabel.Location = new System.Drawing.Point(133, 138);
             this.dealerLabel.Name = "dealerLabel";
             this.dealerLabel.Size = new System.Drawing.Size(78, 24);
@@ -320,7 +334,7 @@
             // valuePlayer
             // 
             this.valuePlayer.BackColor = System.Drawing.Color.Transparent;
-            this.valuePlayer.Font = new System.Drawing.Font("Adobe Fan Heiti Std B", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valuePlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.valuePlayer.Location = new System.Drawing.Point(226, 531);
             this.valuePlayer.Name = "valuePlayer";
             this.valuePlayer.Size = new System.Drawing.Size(272, 36);
@@ -330,7 +344,7 @@
             // 
             this.playerLabel.AutoSize = true;
             this.playerLabel.BackColor = System.Drawing.Color.Transparent;
-            this.playerLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.playerLabel.Location = new System.Drawing.Point(133, 395);
             this.playerLabel.Name = "playerLabel";
             this.playerLabel.Size = new System.Drawing.Size(74, 24);
@@ -340,7 +354,7 @@
             // coinsLabel
             // 
             this.coinsLabel.BackColor = System.Drawing.Color.Transparent;
-            this.coinsLabel.Font = new System.Drawing.Font("Adobe Fan Heiti Std B", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coinsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.coinsLabel.Location = new System.Drawing.Point(169, 586);
             this.coinsLabel.Name = "coinsLabel";
             this.coinsLabel.Size = new System.Drawing.Size(148, 36);
@@ -349,7 +363,7 @@
             // valueDealer
             // 
             this.valueDealer.BackColor = System.Drawing.Color.Transparent;
-            this.valueDealer.Font = new System.Drawing.Font("Adobe Fan Heiti Std B", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valueDealer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.valueDealer.Location = new System.Drawing.Point(226, 112);
             this.valueDealer.Name = "valueDealer";
             this.valueDealer.Size = new System.Drawing.Size(272, 36);
@@ -430,11 +444,21 @@
             // betLabel
             // 
             this.betLabel.BackColor = System.Drawing.Color.Transparent;
-            this.betLabel.Font = new System.Drawing.Font("Adobe Fan Heiti Std B", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.betLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.betLabel.Location = new System.Drawing.Point(515, 531);
             this.betLabel.Name = "betLabel";
             this.betLabel.Size = new System.Drawing.Size(335, 36);
             this.betLabel.TabIndex = 47;
+            // 
+            // hintLabel
+            // 
+            this.hintLabel.AutoSize = true;
+            this.hintLabel.BackColor = System.Drawing.Color.Transparent;
+            this.hintLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.hintLabel.Location = new System.Drawing.Point(390, 80);
+            this.hintLabel.Name = "hintLabel";
+            this.hintLabel.Size = new System.Drawing.Size(0, 18);
+            this.hintLabel.TabIndex = 15;
             // 
             // newGameButton
             // 
@@ -463,7 +487,7 @@
             // gameOverLabel
             // 
             this.gameOverLabel.BackColor = System.Drawing.Color.Transparent;
-            this.gameOverLabel.Font = new System.Drawing.Font("Adobe Fan Heiti Std B", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameOverLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.gameOverLabel.Location = new System.Drawing.Point(358, 275);
             this.gameOverLabel.Name = "gameOverLabel";
             this.gameOverLabel.Size = new System.Drawing.Size(272, 36);
@@ -472,7 +496,7 @@
             // endGame
             // 
             this.endGame.BackColor = System.Drawing.Color.Transparent;
-            this.endGame.Font = new System.Drawing.Font("Adobe Fan Heiti Std B", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.endGame.Location = new System.Drawing.Point(284, 383);
             this.endGame.Name = "endGame";
             this.endGame.Size = new System.Drawing.Size(418, 36);
@@ -482,7 +506,7 @@
             // dealerEndGame
             // 
             this.dealerEndGame.BackColor = System.Drawing.Color.Transparent;
-            this.dealerEndGame.Font = new System.Drawing.Font("Adobe Fan Heiti Std B", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dealerEndGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.dealerEndGame.Location = new System.Drawing.Point(358, 265);
             this.dealerEndGame.Name = "dealerEndGame";
             this.dealerEndGame.Size = new System.Drawing.Size(272, 36);
@@ -492,7 +516,7 @@
             // standDealer
             // 
             this.standDealer.BackColor = System.Drawing.Color.Transparent;
-            this.standDealer.Font = new System.Drawing.Font("Adobe Fan Heiti Std B", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.standDealer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.standDealer.Location = new System.Drawing.Point(515, 112);
             this.standDealer.Name = "standDealer";
             this.standDealer.Size = new System.Drawing.Size(272, 36);
@@ -501,7 +525,7 @@
             // amountWin
             // 
             this.amountWin.BackColor = System.Drawing.Color.Transparent;
-            this.amountWin.Font = new System.Drawing.Font("Adobe Fan Heiti Std B", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.amountWin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (128)));
             this.amountWin.Location = new System.Drawing.Point(101, 428);
             this.amountWin.Name = "amountWin";
             this.amountWin.Size = new System.Drawing.Size(122, 36);
@@ -512,11 +536,11 @@
             // 
             this.feedbackLabel.AutoSize = true;
             this.feedbackLabel.BackColor = System.Drawing.Color.Transparent;
-            this.feedbackLabel.Font = new System.Drawing.Font("Adobe Gothic Std B", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.feedbackLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (128)));
             this.feedbackLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.feedbackLabel.Location = new System.Drawing.Point(62, 655);
             this.feedbackLabel.Name = "feedbackLabel";
-            this.feedbackLabel.Size = new System.Drawing.Size(82, 20);
+            this.feedbackLabel.Size = new System.Drawing.Size(88, 20);
             this.feedbackLabel.TabIndex = 55;
             this.feedbackLabel.Text = "Feedback";
             this.feedbackLabel.Click += new System.EventHandler(this.feedbackLabel_Click);
@@ -525,11 +549,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Adobe Gothic Std B", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (128)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(777, 659);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 16);
+            this.label1.Size = new System.Drawing.Size(108, 16);
             this.label1.TabIndex = 56;
             this.label1.Text = "© 2017 DEYOX";
             // 
@@ -567,7 +591,9 @@
             this.Controls.Add(this.dealButton);
             this.Controls.Add(this.hitButton);
             this.Controls.Add(this.dealerLabel);
+            this.Controls.Add(this.hintLabel);
             this.Controls.Add(this.standButton);
+            this.Controls.Add(this.hintButton);
             this.Controls.Add(this.dealerCard1);
             this.Controls.Add(this.dealerCard2);
             this.Controls.Add(this.dealerCard5);
@@ -582,79 +608,79 @@
             this.Controls.Add(this.endGame);
             this.Controls.Add(this.amountWin);
             this.DoubleBuffered = true;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(950, 900);
             this.MinimumSize = new System.Drawing.Size(900, 726);
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BlackJack";
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dealerCard3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dealerCard4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dealerCard5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dealerCard2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dealerCard1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.surrender)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coins)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.whiteCoin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.redCoin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.greenCoin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.blackCoin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.blueCoin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.playerCard1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.playerCard2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.playerCard3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.playerCard4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.playerCard5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dealerCard3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dealerCard4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dealerCard5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dealerCard2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dealerCard1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.surrender)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.coins)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.whiteCoin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.redCoin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.greenCoin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.blackCoin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.blueCoin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.mainLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
-        #endregion
-
-        private System.Windows.Forms.PictureBox playerCard1;
+        private System.Windows.Forms.Label amountWin;
+        private System.Windows.Forms.Button betButton;
+        private System.Windows.Forms.Label betLabel;
+        private System.Windows.Forms.PictureBox blackCoin;
+        private System.Windows.Forms.PictureBox blueCoin;
+        private System.Windows.Forms.PictureBox coins;
+        private System.Windows.Forms.Label coinsLabel;
+        private System.Windows.Forms.Button dealButton;
+        private System.Windows.Forms.PictureBox dealerCard1;
+        private System.Windows.Forms.PictureBox dealerCard2;
+        private System.Windows.Forms.PictureBox dealerCard3;
+        private System.Windows.Forms.PictureBox dealerCard4;
+        private System.Windows.Forms.PictureBox dealerCard5;
+        private System.Windows.Forms.Label dealerEndGame;
+        private System.Windows.Forms.Label dealerLabel;
+        private System.Windows.Forms.Button doubleButton;
+        private System.Windows.Forms.Label endGame;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label feedbackLabel;
+        private System.Windows.Forms.Label gameOverLabel;
+        private System.Windows.Forms.PictureBox greenCoin;
+        private System.Windows.Forms.Button hintButton;
+        private System.Windows.Forms.Label hintLabel;
+        private System.Windows.Forms.Button hitButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox mainLogo;
+        private System.Windows.Forms.Button newGameButton;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox playerCard1;
         private System.Windows.Forms.PictureBox playerCard2;
         private System.Windows.Forms.PictureBox playerCard3;
         private System.Windows.Forms.PictureBox playerCard4;
         private System.Windows.Forms.PictureBox playerCard5;
-        private System.Windows.Forms.PictureBox dealerCard3;
-        private System.Windows.Forms.PictureBox dealerCard4;
-        private System.Windows.Forms.PictureBox dealerCard5;
-        private System.Windows.Forms.PictureBox dealerCard2;
-        private System.Windows.Forms.PictureBox dealerCard1;
-        private System.Windows.Forms.Button standButton;
-        private System.Windows.Forms.Label dealerLabel;
-        private System.Windows.Forms.Button hitButton;
-        private System.Windows.Forms.Button dealButton;
-        private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.Button rulesButton;
-        private System.Windows.Forms.Button doubleButton;
-        private System.Windows.Forms.PictureBox surrender;
-        private System.Windows.Forms.PictureBox coins;
-        private System.Windows.Forms.Label valuePlayer;
         private System.Windows.Forms.Label playerLabel;
-        private System.Windows.Forms.Label coinsLabel;
-        private System.Windows.Forms.Label valueDealer;
-        private System.Windows.Forms.PictureBox whiteCoin;
         private System.Windows.Forms.PictureBox redCoin;
-        private System.Windows.Forms.PictureBox greenCoin;
-        private System.Windows.Forms.PictureBox blackCoin;
-        private System.Windows.Forms.PictureBox blueCoin;
-        private System.Windows.Forms.Button betButton;
-        private System.Windows.Forms.Label betLabel;
-        private System.Windows.Forms.Button newGameButton;
-        private System.Windows.Forms.PictureBox mainLogo;
-        private System.Windows.Forms.Label gameOverLabel;
-        private System.Windows.Forms.Label endGame;
-        private System.Windows.Forms.Label dealerEndGame;
+        private System.Windows.Forms.Button rulesButton;
+        private System.Windows.Forms.Button standButton;
         private System.Windows.Forms.Label standDealer;
-        private System.Windows.Forms.Label amountWin;
-        private System.Windows.Forms.Label feedbackLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox surrender;
+        private System.Windows.Forms.Label valueDealer;
+        private System.Windows.Forms.Label valuePlayer;
+        private System.Windows.Forms.PictureBox whiteCoin;
 
+        #endregion
     }
 }
 

@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,7 +32,7 @@ namespace BJ5
         HandPlayer handPlayer;
         HandDealer handDealer;
         Card card = null;
-        int playerCounter, coinsTotal, bet, surrenderCounter, dealerCounter;
+        int playerCounter, coinsTotal, bet, surrenderCounter, dealerCounter, aceCounter;
 
         System.Media.SoundPlayer shuffle = new System.Media.SoundPlayer("Resources/shuffle.wav"); // shuffle sound
         System.Media.SoundPlayer placeCard = new System.Media.SoundPlayer("Resources/cardPlace4.wav"); // placeCard sound
@@ -58,6 +59,7 @@ namespace BJ5
             dealButton.Visible = false; standButton.Enabled = false;
             hitButton.Enabled = false; doubleButton.Enabled = false;
             betButton.Enabled = false; surrender.Visible = false;
+            hintButton.Enabled = false;
             // coins/chips
             whiteCoin.Enabled = true; blueCoin.Enabled = true;
             redCoin.Enabled = true; blackCoin.Enabled = true;
@@ -315,6 +317,7 @@ namespace BJ5
             dealButton.Visible = false; betButton.Visible = true;
             betButton.Enabled = false; hitButton.Enabled = false;
             standButton.Enabled = false; amountWin.Visible = false;
+            hintButton.Enabled = false;
 
             handPlayer = new HandPlayer(); // set values in hand back to zero
             handDealer = new HandDealer(); // set values in hand back to zero
@@ -363,12 +366,20 @@ namespace BJ5
             valueDealer.Text = "Dealer's hand total: " + handDealer.getValue().ToString();
             /* Player gets 1st card */
             card = deck.dealCard();
+            if(card.getValue()==1)
+            {
+                aceCounter++;
+            }
             handPlayer.addCard(card);
             playerCard1.Image = Image.FromFile("Resources/" + card.toStringCard() + ".jpg");
             playerCard1.Visible = true;
             /* Player gets 2nd card */
             card = deck.dealCard();
-            handPlayer.addCard(card);
+            if (card.getValue() == 1)
+            {
+                aceCounter++;
+            }
+                handPlayer.addCard(card);
             playerCard2.Image = Image.FromFile("Resources/" + card.toStringCard() + ".jpg");
             playerCard2.Visible = true;
 
@@ -389,8 +400,20 @@ namespace BJ5
         {
             hitButton.Enabled = false; doubleButton.Enabled = false;
             standButton.Enabled = false; surrender.Visible = false;
+            hintButton.Enabled = false;
+            hintLabel.Visible = false;
 
             timer = new System.Threading.Timer(OnTimerEllapsed, new object(), 0, 2000); // dealer plays now
+        }
+        
+        private void hintButton_Click(object sender, EventArgs e)
+        {
+            hintLabel.Visible = true;
+            int playerValue = handPlayer.getValue();
+            int dealerValue = handDealer.getValue();
+
+            hintLabel.Text = $"Card Count is: {playerCounter}. playerValue: {playerValue} \n dealerValue: {dealerValue}. Aces Count: {aceCounter}...The house Recommends " +checkForHint(playerValue, dealerValue, aceCounter);
+            hintButton.Enabled = false;
         }
         /* Starts new round */
         private void dealButton_Click(object sender, EventArgs e)
@@ -398,14 +421,17 @@ namespace BJ5
             playerLabel.Visible = true;
             dealerLabel.Visible = true;
             standButton.Enabled = true;
+            hintButton.Enabled = true;
             hitButton.Enabled = true;
             dealButton.Enabled = false;
             doubleButton.Enabled = true;
             valuePlayer.Visible = true;
             valueDealer.Visible = true;
+            hintLabel.Visible = false;
             standDealer.Visible = true;
             dealerCard2.Image = Image.FromFile("Resources/card-deyox.png");
             dealerCard2.Visible = true;
+            aceCounter = 0;
 
             shuffle.Play();
             startGame();
@@ -421,6 +447,11 @@ namespace BJ5
         private void hitButton_Click(object sender, EventArgs e)
         {
             playerCounter++;
+            if (handPlayer.getValue() < 21)
+            {
+                hintButton.Enabled = true;
+                hintLabel.Visible = false;
+            }
             getCard();
         }
         /* Player doubles his chips to bet, only gets one more card */
@@ -431,6 +462,8 @@ namespace BJ5
                 // standButton.Enabled = false;
                 hitButton.Enabled = false;
                 doubleButton.Enabled = false;
+                hintButton.Enabled = false;
+                hintLabel.Visible = false;
 
                 /* Player gets 3rd card */
                 card = deck.dealCard();
@@ -445,8 +478,10 @@ namespace BJ5
 
                 coinsTotal = coinsTotal - (bet / 2);
                 coinsLabel.Text = " = $" + coinsTotal.ToString();
+                
 
                 checkPlayerHand();
+                
             }
             else if (coinsTotal < bet)
             {
@@ -591,13 +626,16 @@ namespace BJ5
         private void newGameButton_Click(object sender, EventArgs e)
         {
             dealerCounter = 0;
+            aceCounter = 0;
             newRound();
         }
          /* Player has surrended, return half of the chips he bet and starts a new round */
         private void surrender_Click(object sender, EventArgs e)
         {
             surrenderCounter++;
+            hintLabel.Visible = false;
             newRound();
+
         }
         /* Starts a new round by enabling/disabling buttons, labels, and cards.
          * Sets values back to 0
@@ -610,6 +648,7 @@ namespace BJ5
             dealButton.Visible = false; standButton.Enabled = false;
             hitButton.Enabled = false; doubleButton.Enabled = false;
             betButton.Enabled = false; surrender.Visible = false;
+            hintButton.Enabled = false;
             // rest coins/chips
             whiteCoin.Enabled = true; blueCoin.Enabled = true;
             redCoin.Enabled = true; blackCoin.Enabled = true;
@@ -627,6 +666,7 @@ namespace BJ5
             endGame.Visible = false; dealerEndGame.Visible = false;
             playerLabel.Visible = false;
             betButton.Visible = true; amountWin.Visible = false;
+            hintLabel.Visible = false;
             // values in hand
             valuePlayer.Visible = false; valueDealer.Visible = false; standDealer.Visible = false;
 
@@ -634,6 +674,7 @@ namespace BJ5
             handDealer = new HandDealer(); // set values in hand back to zero
 
             playerCounter = 0; // counter to draw more cards back to zero
+            aceCounter = 0; //Sets counter of Player Ace's to zero. 
 
         // start new round if player surrenders
             if (surrenderCounter == 0)
@@ -661,6 +702,74 @@ namespace BJ5
         private void feedbackLabel_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://www.deyox.com/contact.php");
+        }
+
+        private string checkForHint(int playerTotal, int dealerShows, int aces)
+        {
+            if (playerTotal <= 8)
+            {
+                return "Hit";
+            } else if (playerTotal == 9 & dealerShows >=3 & dealerShows <=6 & playerCounter==0)
+            {
+                return "Double";
+            } else if (playerTotal == 9)
+            {
+                return "Hit";
+            } else if (playerTotal == 10 & dealerShows >= 2 & dealerShows <= 9  & playerCounter ==0)
+            {
+                return "Double";
+            } else if (playerTotal == 10)
+            {
+                return "Hit";
+            } else if (playerTotal == 11 & dealerShows >= 2 & dealerShows <= 10 & playerCounter ==0)
+            {
+                return "Double";
+            } else if (playerTotal == 11)
+            {
+                return "Hit";
+            } else if (playerTotal >= 12 & playerTotal <= 16 & aces == 0 & dealerShows >= 2 & dealerShows <= 6)
+            {
+                return "Stand";
+            } else if (playerTotal >= 12 & playerTotal <= 16 & aces == 0)
+            {
+                return "Hit";
+            } else if (playerTotal >= 17 & aces == 0)
+            {
+                return "Stand";
+            } else if (playerTotal >= 13 & playerTotal <= 14 & dealerShows >= 5 & dealerShows <= 6 & playerCounter==0)
+            {
+                return "Double";
+            } else if (playerTotal >= 13 & playerTotal <= 14)
+            {
+                return "Hit";
+            } else if (playerTotal >= 15 & playerTotal <= 16 & dealerShows >= 4 & dealerShows <= 5 & playerCounter==0){
+                return "Double";
+            } else if (playerTotal >= 15 & playerTotal <= 16 & aces>=1)
+            {
+                return "Hit";
+            } else if (playerTotal == 17 & dealerShows >= 3 & dealerShows <= 6 & playerCounter==0)
+            {
+                return "Double";
+            } else if (playerTotal == 17 & dealerShows == 2 | playerTotal == 17 & dealerShows == 7 & playerCounter==0|
+                       playerTotal == 17 & dealerShows == 8 & playerCounter==0)
+            {
+                return "Stand";
+            } else if (playerTotal == 17 & playerCounter==0 & aces>=1)
+            {
+                return "Hit";
+            } else if (playerTotal >= 18 & playerCounter==0 & aces >=1)
+            {
+                return "Stand";
+            } else if (playerTotal >= 12 & aces == 2)
+            {
+                return "Hit";
+            }
+            else
+            {
+                return "It's only money...";
+            }
+
+
         }
     }
 }
