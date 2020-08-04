@@ -244,7 +244,7 @@
             this.dealerLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.dealerLabel.Location = new System.Drawing.Point(133, 138);
             this.dealerLabel.Name = "dealerLabel";
-            this.dealerLabel.Size = new System.Drawing.Size(78, 24);
+            this.dealerLabel.Size = new System.Drawing.Size(115, 35);
             this.dealerLabel.TabIndex = 15;
             this.dealerLabel.Text = "Dealer";
             // 
@@ -347,7 +347,7 @@
             this.playerLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.playerLabel.Location = new System.Drawing.Point(133, 395);
             this.playerLabel.Name = "playerLabel";
-            this.playerLabel.Size = new System.Drawing.Size(74, 24);
+            this.playerLabel.Size = new System.Drawing.Size(110, 35);
             this.playerLabel.TabIndex = 26;
             this.playerLabel.Text = "Player";
             // 
@@ -457,7 +457,7 @@
             this.hintLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 5.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.hintLabel.Location = new System.Drawing.Point(390, 80);
             this.hintLabel.Name = "hintLabel";
-            this.hintLabel.Size = new System.Drawing.Size(0, 18);
+            this.hintLabel.Size = new System.Drawing.Size(0, 15);
             this.hintLabel.TabIndex = 15;
             // 
             // newGameButton
@@ -540,7 +540,7 @@
             this.feedbackLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.feedbackLabel.Location = new System.Drawing.Point(62, 655);
             this.feedbackLabel.Name = "feedbackLabel";
-            this.feedbackLabel.Size = new System.Drawing.Size(88, 20);
+            this.feedbackLabel.Size = new System.Drawing.Size(129, 29);
             this.feedbackLabel.TabIndex = 55;
             this.feedbackLabel.Text = "Feedback";
             this.feedbackLabel.Click += new System.EventHandler(this.feedbackLabel_Click);
@@ -553,7 +553,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(777, 659);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 16);
+            this.label1.Size = new System.Drawing.Size(163, 25);
             this.label1.TabIndex = 56;
             this.label1.Text = "© 2017 DEYOX";
             // 
@@ -564,7 +564,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::BJ5.Properties.Resources.table;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(934, 687);
+            this.ClientSize = new System.Drawing.Size(928, 687);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.feedbackLabel);
             this.Controls.Add(this.dealerEndGame);

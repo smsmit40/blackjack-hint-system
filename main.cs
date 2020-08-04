@@ -511,6 +511,10 @@ namespace BJ5
                 /* Player gets 3rd card */
                 card = deck.dealCard();
                 handPlayer.addCard(card);
+                if(card.getValue()==1)
+                {
+                    aceCounter++;
+                }
                 playerCard3.Image = Image.FromFile("Resources/" + card.toStringCard() + ".jpg");
                 playerCard3.Visible = true;
                 valuePlayer.Text = "Player's hand total: " + handPlayer.getValue().ToString();
@@ -522,6 +526,10 @@ namespace BJ5
                 /* Player gets 4th card */
                 card = deck.dealCard();
                 handPlayer.addCard(card);
+                if(card.getValue()==1)
+                {
+                    aceCounter++;
+                }
                 playerCard4.Image = Image.FromFile("Resources/" + card.toStringCard() + ".jpg");
                 playerCard4.Visible = true;
                 valuePlayer.Text = "Player's hand total: " + handPlayer.getValue().ToString();
@@ -533,6 +541,10 @@ namespace BJ5
                 /* Player gets 5th card */
                 card = deck.dealCard();
                 handPlayer.addCard(card);
+                if(card.getValue()==1)
+                {
+                    aceCounter++;
+                }
                 playerCard5.Image = Image.FromFile("Resources/" + card.toStringCard() + ".jpg");
                 playerCard5.Visible = true;
                 valuePlayer.Text = "Player's hand total: " + handPlayer.getValue().ToString();
